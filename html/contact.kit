@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Zaplanuj swoją wyprawę na łono natury z naszym portalem pełnym przygód! Skontaktuj się z nami, aby uzyskać więcej informacji o naszych ekscytujących wyprawach, kursach survivalowych i możliwościach outdoorowych. Odkryj dzikie zakątki z naszym doświadczonym zespołem. Czekamy na Twój telefon lub e-mail!" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,300;0,400;0,700;1,200&display=swap"
+		rel="stylesheet" />
+	<link rel="icon" href="..src/img/icon/logo-tree.svg" type="image/x-icon">
+	<title>Skontaktuj się z nami i odkrywaj przygody na łonie natury!|Forest Group-Kraków</title>
+	<!-- @include 'styles.kit' -->
+</head>
+
+<body>
+	<!-- @include 'nav.kit' -->
+	<main>
+		<header class="header-box">
+			<div class="header-box__background offer-background">
+				<div class="header-box__text-content container">
+					<p>Zapraszamy do kontaktu</p>
+					<h1>Napisz do nas aby dowiedzieć się więcej</h1>
+				</div>
+				<div class="hero-shadow"></div>
+			</div>
+		</header>
+		<div class="contact-box container">
+			<div class="contact-box__company-info">
+				<div class="contact-box__company-text">
+					<h3>Zapraszamy do bezpośredniego kontaktu przez telefonu lub wypełnienia formularza
+						kontaktowego. Z
+						chęcią odpowiemy na wszystkie pytania i doradzimy w wyborze. Zachęcamy też do bezpośredniego
+						spotkania w naszym biurze.</h3>
+				</div>
+				<div class="contact-box__address">
+					<p><span>Nazwa: </span>Forest</p>
+					<p><span>Adres: </span>Jasnogórska 2, 31-358 Kraków</p>
+					<p><span>Telefon: </span>517-751-325</p>
+					<p><span>Godziny otwarcia: </span>Pn-Pt 8:00 - 16:00</p>
+				</div>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.8980540100906!2d19.88797329246957!3d50.08819553996858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1707493138612!5m2!1spl!2spl"
+					width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+				<div class="contact-box__social-media">
+					<a href="facebook.pl"><img src="dist/img/icon/facebook.svg" alt="logo facebooka" /></a>
+					<a href="instagram.pl"><img src="dist/img/icon/instagram.svg" alt="logo instagrama" /></a>
+					<a href="twitter.pl"><img src="dist/img/icon/twitter.svg" alt="logo twittera" /></a>
+					<a href="twitch.pl"><img src="dist/img/icon/twitch.svg" alt="logo twitcha" /></a>
+					<a href="linkedin.pl"><img src="dist/img/icon/linkedin.svg" alt="logo linkedin" />
+				</div></a>
+			</div>
+			
+			<form class="form-contact">
+				<h2>Skontaktuj się z nami</h2>
+				<div class="form-contact__form-box">
+					<input type="text" id="username" placeholder="Podaj imię">
+					<p class="error-text">error</p>
+				</div>
+				<div class="form-contact__form-box">
+					<input type="text" id="surname" placeholder="Podaj nazwisko">
+					<p class="error-text">error</p>
+				</div>
+				<div class="form-contact__form-box">
+					<input type="email" id="email" placeholder="Podaj adres email">
+					<p class="error-text">error</p>
+				</div>
+				<div class="form-contact__form-box">
+					<textarea type="text" id="msg" rows="10" placeholder="Wpisz treść wiadomości"></textarea>
+					<p class="error-text">error</p>
+				</div>
+
+				<div class="form-contact__control-buttons">
+					<button class="clear">Wyczyść</button>
+					<button class="send">Wyślij</button>
+				</div>
+				<div class="popup">
+					<p>Wiadomość została wysłana! Odpowiemy najszybciej jak to możliwe</p>
+				</div>
+			</form>
+		</div>
+	</main>
+	<!-- @include 'footer.kit' -->
+	<script src="dist/js/form.min.js"></script>
+</body>
+
+</html>

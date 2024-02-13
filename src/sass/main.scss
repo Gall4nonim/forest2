@@ -1,0 +1,847 @@
+@use 'colors';
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+}
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+body.nav-open {
+	overflow: hidden;
+}
+.container {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+	max-width: 1400px;
+}
+.hero-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0, 0.65);
+	z-index: -1;
+}
+.wrapper {
+	padding: 0 2rem;
+}
+.main-header {
+	padding: 2rem 0;
+	font-size: 2.7rem;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 300;
+	letter-spacing: 0.1rem;
+}
+// __nav__ //
+nav {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+// __mobile-nav__ //
+.mobile-nav {
+	height: 6rem;
+
+	.active {
+		left: 0;
+	}
+	.ham-rotate {
+		.ham-bar:nth-child(1),
+		.ham-bar:nth-child(3) {
+			width: 2rem;
+		}
+	}
+	&__logo {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin: 1rem;
+		text-decoration: none;
+		color: colors.$black;
+		img {
+			height: 3rem;
+		}
+		p {
+			font-size: 3.5rem;
+			margin-left: 0.75rem;
+		}
+	}
+	&__top-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		background-color: colors.$white;
+	}
+	&__hamburger-button {
+		margin-right: 1rem;
+		background-color: transparent;
+		border: none;
+		.ham-bar {
+			height: 0.3rem;
+			width: 3rem;
+			margin: 0.6rem;
+			background-color: colors.$black;
+			transition: width 0.3s ease-in-out;
+		}
+		.ham-bar:nth-child(3) {
+			margin-left: auto;
+		}
+	}
+	&__items {
+		position: absolute;
+		display: flex;
+		left: -100rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 300px;
+		background-color: colors.$green;
+		transition: left 0.3s ease-in-out;
+
+		a {
+			margin: 2rem;
+			font-size: 1.5rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			color: colors.$white;
+		}
+	}
+}
+// __desktop-nav__ //
+.desktop-nav {
+	display: none;
+	height: 8rem;
+	background-color: colors.$white;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__logo {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		text-decoration: none;
+		color: colors.$black;
+		img {
+			height: 3rem;
+			margin-left: 2rem;
+		}
+		p {
+			font-size: 3rem;
+			margin-left: 0.75rem;
+		}
+	}
+	&__items {
+		display: flex;
+		height: 8rem;
+		a:first-child {
+			color: colors.$white;
+			background-color: colors.$black;
+		}
+	}
+	&__nav-link {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 2.5rem 4rem;
+		font-size: 2.2rem;
+		color: colors.$black;
+		text-decoration: none;
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+	}
+
+	&__nav-link:hover {
+		color: colors.$white;
+		background-color: colors.$black;
+	}
+}
+// __header__ //
+.header-box {
+	&__background {
+		position: relative;
+		height: 45vh;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 70%;
+		z-index: 1;
+	}
+	.header-background {
+		background-image: url('../img/header-mobile.jpg');
+	}
+	.offer-background {
+		background-image: url('../img/offer-header-mobile.jpg');
+		background-position: center;
+		.hero-shadow {
+			background-color: rgb(0, 0, 0, 0.35);
+		}
+	}
+	&__text-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		padding: 0rem 2rem;
+		text-align: left;
+		color: colors.$white;
+		z-index: 2;
+		p {
+			margin-bottom: 0.5rem;
+			font-size: 2.25rem;
+		}
+		h1 {
+			font-size: 2.75rem;
+		}
+	}
+}
+// __about-us__ //
+.about-us {
+	margin-bottom: 4rem;
+	img {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+	&__text-content {
+		h3 {
+			font-size: 2.1rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 1.6rem;
+			text-align: justify;
+		}
+	}
+}
+// __banner__ //
+.banner {
+	position: relative;
+	.hero-shadow {
+		background-color: rgb(0, 0, 0, 0.55);
+		z-index: 1;
+	}
+	&__background {
+		height: 30vh;
+		background-image: url('../img/banner-mobile.jpg');
+		background-position: center;
+	}
+	&__text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		text-align: center;
+		color: colors.$white;
+
+		h3 {
+			width: 80%;
+			padding: 2rem;
+			font-size: 2.7rem;
+			border: colors.$white solid 0.3rem;
+			background-color: rgba(0, 0, 0, 0.2);
+			transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+			z-index: 3;
+		}
+	}
+	&__text {
+		transition: background-color 0.3s ease-in-out;
+		h3:hover {
+			transform: scale(1.1);
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		&:hover {
+			background-color: rgb(0, 0, 0, 0);
+		}
+	}
+}
+// __offer__ //
+.offer {
+	padding-bottom: 3rem;
+	text-align: center;
+	font-size: 1.6rem;
+	p {
+		font-size: 2.1rem;
+		padding: 0 2rem;
+	}
+	&__single {
+		margin: 3rem 2rem;
+		padding: 3rem 0;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+		transition: transform 0.3s ease-in-out;
+		h3 {
+			font-size: 2.6rem;
+			font-weight: 400;
+		}
+		span {
+			font-size: 4.5rem;
+		}
+	}
+	&__single:hover {
+		transform: scale(1.05);
+	}
+	&__package {
+		display: flex;
+		justify-content: center;
+		margin: 2rem 0;
+
+		p {
+			margin-left: 1rem;
+			font-size: 1.6rem;
+		}
+	}
+	&__btn-standard {
+		margin: 2rem 0;
+		padding: 0.5rem 4rem;
+		font-size: 2.2rem;
+		border: none;
+		cursor: pointer;
+		border-radius: 0.5rem;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+		transition: background-color 0.3s ease-in-out;
+	}
+	&__btn-standard:hover {
+		background-color: colors.$green-icon-hover;
+	}
+	&__link-offer {
+		font-size: 2.75rem;
+		text-decoration: underline black 0.1rem;
+		color: colors.$black;
+	}
+	.green {
+		background-color: colors.$green-icon;
+	}
+	.green:hover {
+		background-color: colors.$green-icon-hover;
+	}
+	.offer-span {
+		color: colors.$green-icon-hover;
+	}
+}
+.contact-box {
+	padding: 0 2rem;
+	&__company-text {
+		margin-top: 3rem;
+		color: colors.$contact-color;
+		h3 {
+			font-size: 1.6rem;
+			margin-bottom: 2rem;
+		}
+	}
+	&__address {
+		span,
+		p {
+			font-size: 1.4rem;
+		}
+		span {
+			font-weight: bold;
+		}
+	}
+
+	&__social-media {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin: 4rem 0;
+		img {
+			padding: 0 1rem;
+		}
+	}
+	iframe {
+		margin-top: 3rem;
+		width: 100%;
+	}
+	.form-contact {
+		position: relative;
+		padding: 1rem;
+		margin-bottom: 4rem;
+		border-radius: 1.5rem;
+		background-color: colors.$contact-color;
+		color: colors.$white;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+		h2 {
+			font-size: 2.1rem;
+			padding: 2rem;
+			text-align: center;
+		}
+		&__form-box {
+			display: flex;
+			flex-direction: column;
+			padding: 2rem;
+			input,
+			textarea {
+				padding: 1rem 1rem;
+				font-size: 1.4rem;
+				border: none;
+				color: colors.$white;
+				background-color: transparent;
+				border-bottom: 0.1rem solid colors.$white;
+			}
+			::placeholder {
+				color: colors.$white;
+			}
+			textarea {
+				resize: none;
+				font-family: 'Noto Sans', sans-serif;
+			}
+			.error-text {
+				visibility: hidden;
+			}
+			.error-text-on {
+				padding-left: 1rem;
+				font-size: 1.2rem;
+				visibility: visible;
+			}
+		}
+		&__control-buttons {
+			display: flex;
+			justify-content: space-around;
+			margin-bottom: 2rem;
+		}
+		.clear,
+		.send,
+		.close {
+			width: 9rem;
+			padding: 0.85rem 0;
+			color: colors.$black;
+			text-transform: uppercase;
+			border-radius: 1.5rem;
+			background-color: colors.$white;
+			border: none;
+			box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+			transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, font-weight 0.3s ease-in-out;
+			cursor: pointer;
+		}
+		.clear:hover,
+		.send:hover,
+		.close:hover {
+			font-weight: bold;
+			color: colors.$white;
+			background-color: rgb(155, 189, 155);
+		}
+		.popup {
+			display: none;
+			text-align: center;
+			p {
+				margin-bottom: 2rem;
+				font-size: 1.8rem;
+			}
+		}
+		.show-popup {
+			display: block;
+			color: colors.$green-icon;
+		}
+		.error-text-on {
+			color: rgb(213, 68, 68);
+		}
+	}
+}
+.sub-site-offer-box {
+	&__text {
+		padding: 2rem;
+		h2 {
+			margin: 0 0 2rem 0;
+			font-size: 2.1rem;
+		}
+		p {
+			font-size: 1.6rem;
+		}
+		.down-paragraph {
+			padding: 1rem 0rem;
+		}
+	}
+	.down-offer {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		margin-bottom: 2rem;
+		h2 {
+			margin: 2rem;
+			font-size: 2.1rem;
+		}
+		p {
+			margin: 0.5rem 2rem;
+			font-size: 1.6rem;
+		}
+		span {
+			font-weight: bold;
+		}
+	}
+	&__img-box {
+		position: relative;
+	}
+	&__big-photo {
+		width: 100%;
+		border: white 3rem solid;
+	}
+	&__small-photo-left {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 165px;
+		border: white 1.25rem solid;
+		transition: height 0.3s ease-in-out;
+	}
+	&__small-photo-left:hover {
+		height: 85%;
+	}
+
+	.small-photo-right {
+		right: 0;
+		margin-left: auto;
+	}
+}
+.error-404 {
+	text-align: center;
+	padding: 2rem;
+	&__text-box {
+		span {
+			font-size: 7rem;
+		}
+		h2 {
+			font-size: 2rem;
+		}
+		p {
+			font-size: 1.6rem;
+			margin-bottom: 2rem;
+		}
+		.link-404 {
+			font-size: 1.6rem;
+		}
+	}
+}
+footer {
+	background-color: rgb(216, 214, 214);
+	.footer-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 5rem;
+		p {
+			font-size: 5rem;
+		}
+		img {
+			height: 5rem;
+		}
+		&__website-map-box {
+			text-align: center;
+			h3 {
+				padding-top: 1.5rem;
+				font-size: 2.75rem;
+			}
+			a {
+				padding: 1rem 0;
+				font-size: 2rem;
+				text-decoration: none;
+				color: colors.$black;
+			}
+		}
+		&__about-us,
+		&__company,
+		&__docs {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.line,
+	.line-bold {
+		height: 0.1rem;
+		width: 100%;
+		background-color: colors.$black;
+	}
+	.line-bold {
+		height: 0.2rem;
+	}
+	.signature {
+		padding: 3.5rem 0;
+		text-align: center;
+		p {
+			font-size: 1.6rem;
+		}
+	}
+}
+@media (min-width: 360px) {
+	.sub-site-offer-box {
+		&__small-photo-left {
+			height: 210px;
+		}
+	}
+}
+@media (min-width: 576px) {
+	.header-box {
+		.header-background {
+			background-image: url('../img/header-desktop.jpg');
+		}
+		.offer-background {
+			background-image: url('../img/offer-header-desktop.jpg');
+		}
+		&__text-content {
+			p {
+				font-size: 2.5rem;
+			}
+			h1 {
+				font-size: 3rem;
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.main-header {
+		font-size: 3.2rem;
+	}
+	.header-box {
+		&__text-content {
+			p {
+				font-size: 2.75rem;
+			}
+			h1 {
+				font-size: 3.25rem;
+			}
+		}
+	}
+	.banner {
+		&__background {
+			background-image: url('../img/banner-desktop.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		&__text {
+			h3 {
+				font-size: 3.2rem;
+			}
+		}
+	}
+	.offer {
+		&__single {
+			margin: 4rem 15rem;
+		}
+	}
+	.contact-box {
+		display: flex;
+		align-items: center;
+		margin-top: 5rem;
+		&__company-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding: 0 10rem;
+			h3 {
+				font-size: 2.5rem;
+			}
+			span,
+			p {
+				font-size: 2rem;
+			}
+		}
+		span {
+			color: colors.$contact-color;
+			font-weight: bold;
+		}
+		&__social-media {
+			justify-content: start;
+		}
+		.form-contact {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.sub-site-offer-box {
+		.right-box {
+			display: flex;
+			flex-direction: row-reverse;
+		}
+		&__offer-content {
+			display: flex;
+		}
+		.down-offer {
+			h2 {
+				font-size: 3rem;
+				text-align: center;
+			}
+			p {
+				margin: 1rem 20rem;
+				font-size: 2rem;
+			}
+		}
+
+		&__text {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 3rem 2rem;
+			text-align: center;
+			h2 {
+				margin: 2rem;
+				font-size: 3rem;
+			}
+			p {
+				font-size: 2rem;
+			}
+			span {
+				font-weight: 600;
+			}
+		}
+		&__big-photo {
+			width: 450px;
+			border: white 3rem solid;
+		}
+		&__small-photo-left {
+			height: 300px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.scroll-spy-active {
+		background-color: rgb(96, 87, 87);
+		color: colors.$white;
+	}
+	html {
+		scroll-padding-top: 7.8rem;
+	}
+	.main-header {
+		padding: 4rem 0;
+		font-size: 4.6rem;
+	}
+	.mobile-nav {
+		display: none;
+	}
+	.desktop-nav {
+		display: flex;
+		&__logo {
+			img {
+				height: 4rem;
+			}
+			p {
+				font-size: 4rem;
+			}
+		}
+		.main-header {
+			font-size: 4.2rem;
+		}
+	}
+	.header-box {
+		&__text-content {
+			p {
+				font-size: 3.75rem;
+			}
+			h1 {
+				font-size: 4.25rem;
+			}
+		}
+	}
+	.about-us {
+		&__box {
+			display: flex;
+		}
+		&__pictrue {
+			width: 50%;
+		}
+		&__text-content {
+			margin-left: 5rem;
+			width: 50%;
+			h3 {
+				font-size: 3.5rem;
+			}
+			p {
+				font-size: 1.6rem;
+				line-height: 3rem;
+				font-weight: 300;
+			}
+		}
+	}
+	.banner {
+		&__background {
+			height: 40vh;
+		}
+		&__text {
+			h3 {
+				width: 50%;
+				font-size: 4.6rem;
+			}
+		}
+	}
+	.offer {
+		&__box {
+			display: flex;
+			justify-content: space-around;
+		}
+		&__single {
+			margin: 3rem 2rem;
+			width: 100%;
+		}
+	}
+	footer {
+		.footer-box {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			padding: 5rem 0;
+			p {
+				font-size: 5rem;
+			}
+			img {
+				height: 5rem;
+			}
+			&__website-map-box {
+				display: flex;
+				h3 {
+					font-size: 2.5rem;
+				}
+			}
+			&__about-us,
+			&__company,
+			&__docs {
+				margin: 0 4rem;
+				display: flex;
+				flex-direction: column;
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.about-us {
+		&__text-content {
+			p {
+				font-size: 1.8rem;
+				line-height: 4rem;
+			}
+		}
+	}
+	.sub-site-offer-box {
+		&__text {
+			margin: 3rem 10rem;
+			h2 {
+				font-size: 3.5rem;
+			}
+			p {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+@media (min-width: 1400px) {
+	.about-us {
+		&__text-content {
+			p {
+				font-size: 2.1rem;
+			}
+		}
+	}
+}
